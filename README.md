@@ -1,2 +1,0 @@
-# cppscript
-Conversor de Unidades
