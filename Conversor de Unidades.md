@@ -1,35 +1,32 @@
-# cppscript
-
-#include <iostream>
-#include <iomanip>
-#include <limits>
-
-void clearInput() {
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-
-double convert(double value, double factor, double offset = 0) {
-    return value * factor + offset;
-}
-
-void displayMenu() {
-    std::cout << "\nUnit Converter\n";
-    std::cout << "1. Celsius to Fahrenheit\n";
-    std::cout << "2. Kilometers to Miles\n";
-    std::cout << "3. Kilograms to Pounds\n";
-    std::cout << "4. Exit\n";
-    std::cout << "Choose an option: ";
-}
-
-int main() {
-    int choice;
-    do {
-        displayMenu();
-
-        while (!(std::cin >> choice) || choice < 1 || choice > 4) {
-            std::cout << "Invalid input. Please enter a number between 1 and 4: ";
-            clearInput();
+	#include <iostream>
+	#include <iomanip>
+	#include <limits>
+	
+	void clearInput() {
+	    std::cin.clear();
+	    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	}
+	
+	double convert(double value, double factor, double offset = 0) {
+	    return value * factor + offset;
+	}
+	
+	void displayMenu() {
+	    std::cout << "\nUnit Converter\n";
+	    std::cout << "1. Celsius to Fahrenheit\n";
+	    std::cout << "2. Kilometers to Miles\n";
+	    std::cout << "3. Kilograms to Pounds\n";
+	    std::cout << "4. Exit\n";
+	    std::cout << "Choose an option: ";
+	}
+	
+	int main() {
+	    int choice;
+	    do {
+	        displayMenu();
+	        while (!(std::cin >> choice) || choice < 1 || choice > 4) {
+	            std::cout << "Invalid input. Please enter a number between 1 and 4: ";
+	            clearInput();
         }
 
         if (choice == 4) {
@@ -59,7 +56,7 @@ int main() {
                 std::cout << value << " kilograms is " << std::fixed << std::setprecision(2) << result << " pounds.\n";
                 break;
         }
-    } while (true);
+ 
 
     return 0;
 }
